@@ -74,22 +74,25 @@ textarea:focus-visible {
   top: 0;
   z-index: 10;
   display: flex;
-  flex-direction: column; /* HP: logo di atas menu */
+  flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   padding: 1rem;
   background-color: var(--warna-utama);
   color: #ffffff;
 }
+
 .logo {
   margin: 0;
   font-size: 1.4rem;
   font-weight: 700;
 }
+
 .logo a {
   color: inherit;
   text-decoration: none;
 }
+
 .menu {
   display: flex;
   flex-wrap: wrap;
@@ -99,6 +102,7 @@ textarea:focus-visible {
   padding: 0;
   list-style: none;
 }
+
 .menu a {
   display: block;
   padding: 0.35rem 0.75rem;
@@ -106,12 +110,14 @@ textarea:focus-visible {
   color: #ffffff;
   text-decoration: none;
 }
+
 .menu a:hover,
 .menu a[aria-current="page"] {
   background-color: var(--warna-utama-gelap);
 }
+
 .header-situs a:focus-visible {
-  outline-color: #ffffff; /* fokus putih agar terlihat di latar header yang gelap */
+  outline-color: #ffffff;
 }
 
 /* ---------- 4. Hero ---------- */
