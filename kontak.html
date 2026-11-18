@@ -4,9 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <header class="header-situs">
+      <p class="logo"><a href="index.html"></a>Sasirangan Banua</p>
+      <nav aria-label="Navigasi Utama">
+        <ul class="menu">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="index.html#katalog">Katalog</a></li>
+          <li><a href="index.html#tentang">Tentang</a></li>
+          <li><a href="kontak.html" aria-current="page">Pesan</a></li>
+        </ul>
+      </nav>
+    </header>
     <main>
       <section class="bagian" id="pesan">
         <h1>Formulir Pemesanan</h1>
@@ -14,7 +25,13 @@
           Isi formulir berikut. Kolom bertanda <strong>*</strong> wajib diisi.
         </p>
 
-        <form id="form-pesan" class="form-pesan" action="#" method="get">
+        <form
+          id="form-pesan"
+          class="form-pesan"
+          action="#"
+          method="get"
+          novalidate
+        >
           <div class="kolom">
             <label for="nama">Nama lengkap *</label>
             <input
@@ -24,7 +41,9 @@
               required
               minlength="3"
               autocomplete="name"
+              aria-describedby="error-nama"
             />
+            <p class="pesan-error" id="error-nama"></p>
           </div>
 
           <div class="kolom">
@@ -37,17 +56,31 @@
               pattern="08[0-9]{8,11}"
               placeholder="Contoh: 081234567890"
               autocomplete="tel"
+              aria-describedby="error-wa"
             />
+            <p class="pesan-error" id="error-wa"></p>
           </div>
 
           <div class="kolom">
             <label for="email">Surel</label>
-            <input type="email" id="email" name="email" autocomplete="email" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              aria-describedby="error-email"
+            />
+            <p class="pesan-error" id="error-email"></p>
           </div>
 
           <div class="kolom">
             <label for="produk">Produk yang dipesan *</label>
-            <select id="produk" name="produk" required>
+            <select
+              id="produk"
+              name="produk"
+              required
+              aria-describedby="error-produk"
+            >
               <option value="">-- Pilih produk --</option>
               <option>Kain Motif Gigi Haruan</option>
               <option>Kain Motif Kambang Kacang</option>
@@ -56,6 +89,7 @@
               <option>Tas Naga Balimbur</option>
               <option>Gamis Ombak Sinapur Karang</option>
             </select>
+            <p class="pesan-error" id="error-produk"></p>
           </div>
 
           <div class="kolom">
@@ -68,7 +102,9 @@
               max="50"
               value="1"
               required
+              aria-describedby="error-jumlah"
             />
+            <p class="pesan-error" id="error-jumlah"></p>
           </div>
 
           <fieldset>
@@ -103,14 +139,48 @@
             ></textarea>
           </div>
 
-          <label class="cek">
-            <input type="checkbox" id="setuju" name="setuju" required />
-            Saya setuju data ini hanya dipakai untuk memproses pesanan. *
-          </label>
+          <div class="kolom">
+            <label class="cek">
+              <input
+                type="checkbox"
+                id="setuju"
+                name="setuju"
+                required
+                aria-describedby="error-setuju"
+              />
+              Saya setuju data ini hanya dipakai untuk memproses pesanan. *
+            </label>
+            <p class="pesan-error" id="error-setuju"></p>
+          </div>
 
           <button type="submit" class="tombol">Kirim Pesanan</button>
         </form>
+
+        <!-- Muncul setelah formulir valid -->
+        <div id="hasil-pesan" class="hasil-pesan" hidden>
+          <h2>Ringkasan Pesanan</h2>
+          <pre id="ringkasan"></pre>
+          <a
+            id="tautan-wa"
+            class="tombol"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            >Lanjutkan ke WhatsApp</a
+          >
+        </div>
       </section>
     </main>
+
+    <footer class="footer-situs">
+      <p>
+        &copy; 2026 Sasirangan Banua &middot; Kampung Sasirangan, Banjarmasin
+      </p>
+      <p>
+        Dibuat oleh Ahmad David Alvees (2510010121) &middot; Praktikum
+        Pemrograman Web 1 UNISKA MAB
+      </p>
+    </footer>
   </body>
+  <script src="js/form.js"></script>
 </html>

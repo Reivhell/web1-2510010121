@@ -9,6 +9,7 @@
     karya pengrajin lokal"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon" />
     <title>Sasirangan Banua | Kain Khas Banjar</title>
   </head>
 
@@ -38,98 +39,56 @@
       <section class="bagian" id="katalog">
         <h2>Katalog Produk</h2>
         <p>Pilihan kain, busana, dan aksesoris Sasirangan terbaru.</p>
-        <div class="katalog-grid">
-          <article class="kartu">
-            <img
-              src="img/gigi-haruan.svg"
-              alt="Kain sasirangan motif gigi haruan warna merah marun"
-              width="600"
-              height="400"
+        <div class="kontrol-katalog">
+          <div class="kolom">
+            <label for="cari">Cari produk</label>
+            <input
+              type="search"
+              id="cari"
+              placeholder="Contoh: kemeja, selendang"
             />
-            <div class="kartu-isi">
-              <h3>Kain Motif Gigi Haruan</h3>
-              <p>
-                Kain katun 2 meter bermotif zig-zag menyerupai gigi ikan haruan.
-              </p>
-              <p class="harga">Rp185.000</p>
-            </div>
-          </article>
-          <article class="kartu">
-            <img
-              src="img/kambang-kacang.svg"
-              alt="Kain sasirangan motif kambang kacang warna hijau
-              tosca"
-              width="600"
-              height="400"
-            />
-            <div class="kartu-isi">
-              <h3>Kain Motif Kambang Kacang</h3>
-              <p>
-                Motif bunga kacang yang melambangkan keakraban dan kerukunan.
-              </p>
-              <p class="harga">Rp175.000</p>
-            </div>
-          </article>
-          <article class="kartu">
-            <img
-              src="img/bayam-raja.svg"
-              alt="Kain sasirangan motif bayam raja warna hijau
-              tosca"
-              width="600"
-              height="400"
-            />
-            <div class="kartu-isi">
-              <h3>Kain Motif bayam raja</h3>
-              <p>Motif bayam raja yang melambangkan keakraban dan kerukunan.</p>
-              <p class="harga">Rp175.000</p>
-            </div>
-          </article>
-          <article class="kartu">
-            <img
-              src="img/iris-pudak.svg"
-              alt="Kain sasirangan motif iris pudak"
-              width="600"
-              height="400"
-            />
-            <div class="kartu-isi">
-              <h3>Kain Motif Iris Pudak</h3>
-              <p>Motif Iris Pudak yang melambangkan keakraban dan kerukunan.</p>
-              <p class="harga">Rp175.000</p>
-            </div>
-          </article>
-          <article class="kartu">
-            <img
-              src="img/naga-balimbur.svg"
-              alt="Kain sasirangan motif naga balimbur"
-              width="600"
-              height="400"
-            />
-            <div class="kartu-isi">
-              <h3>Kain Motif Naga Balimbur</h3>
-              <p>
-                Motif Naga Balimbur yang melambangkan keakraban dan kerukunan.
-              </p>
-              <p class="harga">Rp175.000</p>
-            </div>
-          </article>
-          <article class="kartu">
-            <img
-              src="img/ombak-sinapur-karang.svg"
-              alt="Kain sasirangan motif ombak sinampur karang
-              tosca"
-              width="600"
-              height="400"
-            />
-            <div class="kartu-isi">
-              <h3>Kain Motif Ombak Sinampur Karang</h3>
-              <p>
-                Motif Ombak Sinampur Karang yang melambangkan keakraban dan
-                kerukunan.
-              </p>
-              <p class="harga">Rp175.000</p>
-            </div>
-          </article>
+          </div>
+          <div class="filter" role="group" aria-label="Filter kategori">
+            <button
+              type="button"
+              class="tombol-filter aktif"
+              data-kategori="semua"
+              aria-pressed="true"
+            >
+              Semua
+            </button>
+            <button
+              type="button"
+              class="tombol-filter"
+              data-kategori="kain"
+              aria-pressed="false"
+            >
+              Kain
+            </button>
+            <button
+              type="button"
+              class="tombol-filter"
+              data-kategori="pakaian"
+              aria-pressed="false"
+            >
+              Pakaian
+            </button>
+            <button
+              type="button"
+              class="tombol-filter"
+              data-kategori="aksesoris"
+              aria-pressed="false"
+            >
+              Aksesoris
+            </button>
+          </div>
         </div>
+
+        <p id="info-jumlah" class="info-jumlah" aria-live="polite"></p>
+        <div id="daftar-katalog" class="katalog-grid"></div>
+        <noscript
+          ><p>Aktifkan JavaScript untuk melihat katalog produk.</p></noscript
+        >
       </section>
 
       <section class="bagian" id="tentang">
@@ -184,4 +143,5 @@
       </p>
     </footer>
   </body>
+  <script src="js/katalog.js"></script>
 </html>
